@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - Gestão de Usuários</title>
+    <!-- Assumindo que você usa o mesmo CSS em todas as páginas -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='milligram.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Sistema</h1>
+        <p>Utilize o botão abaixo para cadastrar um novo usuário:</p>
+
+        <!-- O link direciona para a rota que você criar no seu Controller -->
+        <a href="/usuarios/form" class="button">Cadastrar Novo Usuário</a>
+        <a href="/usuarios/buscar" class="button">Validar Usuário</a>
+    </div>
+</body>
+
+</html>

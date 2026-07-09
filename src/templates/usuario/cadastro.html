@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Teste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='milligram.css') }}">
+</head>
+
+<body>
+    <div class="container" style="max-width: 400px; margin-top: 50px;">
+        <h3>Cadastrar Usuário</h3>
+
+        <form action="/usuarios" method="post">
+            <label for="userName">Nome do Usuário</label>
+            <input type="text" id="userName" name="userName" placeholder="Ex: João Silva" required>
+            <button type="submit" class="button-primary">Salvar Usuário</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert" style="padding: 1rem; border: 1px solid #9b4dca; border-radius: 4px; margin-top: 10px;">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>
