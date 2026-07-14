@@ -18,8 +18,11 @@ def user_form():
 @usuario_bp.route('/usuarios', methods=['POST'])
 def cadastrar_usuario():
     usuario = request.form
-    UsuarioDao.inserir_usuario(usuario['userName'])
-    flash('Usuário cadastrado com sucesso!')
+    resposta = UsuarioDao.inserir_usuario(usuario['userName'])
+    if resposta is True:
+        flash('Usuário cadastrado com sucesso!')
+    else: 
+        flash('Esse usuário já está cadastrado.')
 
     return redirect(url_for('usuario_bp.user_form'))
 

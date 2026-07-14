@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Teste</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='milligram.css') }}">
 </head>
 
@@ -16,6 +16,7 @@
             <label for="userName">Nome do Usuário</label>
             <input type="text" id="userName" name="userName" placeholder="Ex: João Silva" required>
             <button type="submit" class="button-primary">Salvar Usuário</button>
+            <a href="/" style="padding: 10px">Voltar ao início</a>
         </form>
 
         {% with messages = get_flashed_messages() %}
